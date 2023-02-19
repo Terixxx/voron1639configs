@@ -1,0 +1,65 @@
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /tmp/klippy_uds-1
+
+[machine]
+sudo_password = 8012
+
+[database]
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	http://*.lan
+	http://*.local
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	https://app.fluidd.xyz
+	http://app.fluidd.xyz
+
+[file_manager]
+
+[octoprint_compat]
+
+[history]
+
+[update_manager]
+channel = dev
+refresh_interval = 24
+
+[update_manager mainsail]
+type = web
+channel = beta
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager client kiauh]
+type = git_repo
+path = /home/phoenix/kiauh
+origin = https://github.com/th33xitus/kiauh.git
+
+[update_manager client z_calibration]
+type = git_repo
+path = /home/phoenix/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
+install_script = install.sh
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+
+[timelapse]
+output_path = ~/timelapse/
+frame_path = /tmp/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
